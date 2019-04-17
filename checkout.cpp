@@ -1,5 +1,5 @@
-// Name
-// Section #
+// Cheng No Chang
+// Section 3
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -22,38 +22,37 @@ void printMenu() {
     cout << "Please enter a choice: ";
 }
 
-/* You are not obligated to use these function declarations - they're just given as examples
-void readBooks(vector<Book *> & myBooks) {
-    return;
+
+void readBooks(vector<Book*> & myBooks) {
+
 }
 
-int readPersons(vector<Person *> & myCardholders) {
+int readPersons(vector<Person*> & myCardholders) {
     return 0;
 }
 
-void readRentals(vector<Book *> & myBooks, vector<Person *> myCardholders) {
-    return;
+void readRentals(vector<Book*> & myBooks, vector<Person *> myCardholders) {
+
 }
 
-void openCard(vector<Person *> & myCardholders, int nextID) {
-    return;
+void openCard(vector<Person*> & myCardholders, int nextID) {
+
 }
 
-Book * searchBook(vector<Book *> myBooks, int id) {
+Book * searchBook(vector<Book*> myBooks, int id) {
     return nullptr;
 }
-*/
+
 
 int main()
 {
-    vector<Book *> books;
-    vector<Person *> cardholders;
-    
+    vector<Book*> books;
+    vector<Person*> cardholders;
+
     int choice;
     do
     {
-        // If you use cin anywhere, don't forget that you have to handle the <ENTER> key that 
-        // the user pressed when entering a menu option. This is still in the input stream.
+
         printMenu();
         cin >> choice;
         switch(choice)
@@ -85,7 +84,7 @@ int main()
             case 7:
                 // Close library card
                 break;
-                
+
             case 8:
                 // Must update records in files here before exiting the program
                 break;
