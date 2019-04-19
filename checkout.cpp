@@ -8,6 +8,19 @@
 #include "book.cpp"
 
 using namespace std;
+void printmenu();
+
+int getcountofbooks();
+bool bookcheckout(vector<Book*> & myBooks, vector<Person*> & myCardholders);
+void readBooks(vector<Book*> & myBooks);
+
+int readPersons(vector<Person*> & myCardholders);
+int getcountofpeople();
+
+void readRentals(vector<Book*> & myBooks, vector<Person *> myCardholders);
+void openCard(vector<Person*> & myCardholders, int nextID);
+Book * searchBook(vector<Book*> myBooks, int id);
+
 
 void printMenu() {
     cout << "----------Library Book Rental System----------" << endl;
@@ -22,13 +35,51 @@ void printMenu() {
     cout << "Please enter a choice: ";
 }
 
+bool bookcheckout(vector<Book*> & myBooks, vector<Person*> & myCardholders){
+  int cardID;
+  cout << "Please enter the card ID: ";
+  cin >> cardID;
+  if (cardID == )
+}
 
 void readBooks(vector<Book*> & myBooks) {
+ifstream infile;
+string random;
+int bookid;
+string booktitle;
+string author;
+string genre;
+infile.open("books.txt")
+while(!infile.eof()){
+  infile >> bookid;
+  getline(infile, random);
+  getline(infile, booktitle);
+  getline(infile, author);
+  getline(infile, genre);
+  getline(infile,random);
+}
+infile.close();
 
 }
 
+
+
 int readPersons(vector<Person*> & myCardholders) {
+
     return 0;
+}
+
+int getcountofpeople(){
+ifstream infile;
+int count = 0;
+infile.open("persons.txt")
+while(!infile.eof()){
+  getline(infile,line)
+  int count++;
+}
+infile.close();
+return count;
+
 }
 
 void readRentals(vector<Book*> & myBooks, vector<Person *> myCardholders) {
