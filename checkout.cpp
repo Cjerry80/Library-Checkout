@@ -50,13 +50,13 @@ string booktitle;
 string author;
 string genre;
 infile.open("books.txt")
-while(!infile.eof()){
-  infile >> bookid;
+while(infile >> bookid){ // Reads the first number of the file and since it has to read the first number, it will only execute if there is a numner. THe last line doesn't have a number so the while loop wont execute and prevents duplicates of the last line.
   getline(infile, random);
   getline(infile, booktitle);
   getline(infile, author);
   getline(infile, genre);
-  getline(infile,random);
+  getline(infile, random);
+
 }
 infile.close();
 
