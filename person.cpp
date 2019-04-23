@@ -1,10 +1,10 @@
 #include "person.h"
 
 Person::Person(int cardNo, bool act, string fName, string lName) {
-    cardnumber = 0;
-    bookactive = 1;
-    firstname = " ";
-    lastname = " ";
+  firstName = fName;
+  lastName = lName;
+  cardID = cardNo;
+  active = act;
     // complete constructor
 }
 
@@ -17,7 +17,7 @@ string Person::getLastName() {
 }
 
 int Person::getId() {
-    return cardNo; // complete
+    return cardID; // complete
 }
 
 void Person::setActive(bool act) {
@@ -25,7 +25,11 @@ void Person::setActive(bool act) {
 } // complete
 
 bool Person::isActive() {
-    return true; // complete
+  if (active == true)
+    return true;
+  else
+    return false;
+    // complete
 }
 
 string Person::fullName() {

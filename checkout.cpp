@@ -10,12 +10,12 @@
 using namespace std;
 void printmenu();
 
-int getcountofbooks();
+
 bool bookcheckout(vector<Book*> & myBooks, vector<Person*> & myCardholders);
 void readBooks(vector<Book*> & myBooks);
 
 int readPersons(vector<Person*> & myCardholders);
-int getcountofpeople();
+
 
 void readRentals(vector<Book*> & myBooks, vector<Person *> myCardholders);
 void openCard(vector<Person*> & myCardholders, int nextID);
@@ -51,12 +51,12 @@ string author;
 string genre;
 infile.open("books.txt")
 while(infile >> bookid){ // Reads the first number of the file and since it has to read the first number, it will only execute if there is a numner. THe last line doesn't have a number so the while loop wont execute and prevents duplicates of the last line.
-  getline(infile, random);
+  getline(infile, random); //Placeholder to get to next line, reads the "whitespace"
   getline(infile, booktitle);
   getline(infile, author);
   getline(infile, genre);
   getline(infile, random);
-
+  myBooks.push_back(new Book (bookid, booktitle, author, genre))
 }
 infile.close();
 
@@ -65,24 +65,32 @@ infile.close();
 
 
 int readPersons(vector<Person*> & myCardholders) {
-
+ifstream infile;
+int cardid;
+bool isactive;
+string fname;
+string lname;
+string random;
+infile.open("persons.txt")
+while(infile >> cardid){
+  infile >> isactive >> fname >> lname;
+  getline(infile, random);
+  myCardholders.push_back(new Person (cardid, isactive, fname, lname));
+}
+infile.close();
     return 0;
 }
 
-int getcountofpeople(){
-ifstream infile;
-int count = 0;
-infile.open("persons.txt")
-while(!infile.eof()){
-  getline(infile,line)
-  int count++;
-}
-infile.close();
-return count;
 
-}
 
 void readRentals(vector<Book*> & myBooks, vector<Person *> myCardholders) {
+infile ifstream;
+int bookid;
+int cardid;
+infile.open("rentals.txt");
+while(infile >> bookid){
+  infile >> cardid;
+}
 
 }
 
