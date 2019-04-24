@@ -39,7 +39,10 @@ bool bookcheckout(vector<Book*> & myBooks, vector<Person*> & myCardholders){
   int cardID;
   cout << "Please enter the card ID: ";
   cin >> cardID;
-  if (cardID == )
+  validid(cardID, myCardholders);
+  if (validid ==  ){
+
+  }
 }
 
 void readBooks(vector<Book*> & myBooks) {
@@ -56,7 +59,7 @@ while(infile >> bookid){ // Reads the first number of the file and since it has 
   getline(infile, author);
   getline(infile, genre);
   getline(infile, random);
-  myBooks.push_back(new Book (bookid, booktitle, author, genre))
+  myBooks.push_back(new Book (bookid, booktitle, author, genre)) // Same as Book * newptr. newptr = new Book;
 }
 infile.close();
 
@@ -92,7 +95,29 @@ while(infile >> bookid){
   infile >> cardid;
 }
 
+infile.close();
+
 }
+
+bool validbook(int bookid, vector<Book*> & myBooks){
+  for (int i = o; i < myBooks.size(); i++){
+    if ( bookid == (*myBooks).at(i).getId())
+      return true;
+    else
+      cout << "Book ID not valid" << endl;
+  }
+
+}
+
+Person * validcard(int cardID, vector<Person*> & myCardholders ){
+   for (int i = o; i < myCardholders.size(); i++){
+     if (cardID == (*myCardholders.at(i).getId())){
+        return validcard;
+       }
+     }
+     return nullptr; // Didn't find card id since
+}
+
 
 void openCard(vector<Person*> & myCardholders, int nextID) {
 
@@ -117,6 +142,7 @@ int main()
         switch(choice)
         {
             case 1:
+              bookcheckout(myCardholders, myBooks);
                 // Book checkout
                 break;
 
