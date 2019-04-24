@@ -39,8 +39,8 @@ bool bookcheckout(vector<Book*> & myBooks, vector<Person*> & myCardholders){
   int cardID;
   cout << "Please enter the card ID: ";
   cin >> cardID;
-  validid(cardID, myCardholders);
-  if (validid ==  ){
+  validcard(cardID, myCardholders);
+  if (validcard != null ){
 
   }
 }
@@ -93,6 +93,8 @@ int cardid;
 infile.open("rentals.txt");
 while(infile >> bookid){
   infile >> cardid;
+  myBooks.push_back(new Book(bookid));
+  myCardholders.push_back(new Person(cardid));
 }
 
 infile.close();
@@ -111,11 +113,12 @@ bool validbook(int bookid, vector<Book*> & myBooks){
 
 Person * validcard(int cardID, vector<Person*> & myCardholders ){
    for (int i = o; i < myCardholders.size(); i++){
-     if (cardID == (*myCardholders.at(i).getId())){
-        return validcard;
+     if (cardID == (*myCardholders).at(i).getId()) {
+       if ((*myCardholders).at(i).isActive() == true )
+        return personPtr;
        }
      }
-     return nullptr; // Didn't find card id since
+     return nullptr; // Didn't find card id
 }
 
 
