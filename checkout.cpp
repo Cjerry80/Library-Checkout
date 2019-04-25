@@ -11,7 +11,7 @@ using namespace std;
 void printmenu();
 
 
-bool bookcheckout(vector<Book*> & myBooks, vector<Person*> & myCardholders);
+void bookcheckout(vector<Book*> & myBooks, vector<Person*> & myCardholders);
 void readBooks(vector<Book*> & myBooks);
 
 int readPersons(vector<Person*> & myCardholders);
@@ -35,14 +35,20 @@ void printMenu() {
     cout << "Please enter a choice: ";
 }
 
-bool bookcheckout(vector<Book*> & myBooks, vector<Person*> & myCardholders){
+void bookcheckout(vector<Book*> & myBooks, vector<Person*> & myCardholders){
   int cardID;
+  int bookID;
   cout << "Please enter the card ID: ";
   cin >> cardID;
-  validcard(cardID, myCardholders);
+  validcard(myCardholders, cardID);
   if (validcard != null ){
-
+    cout << "Please enter the book ID: ";
+    cin >> bookID;
+    searchBook(myBooks, bookID);
+    return;
   }
+  else
+    cout << "Card ID not found." << endl;
 }
 
 void readBooks(vector<Book*> & myBooks) {
@@ -115,6 +121,15 @@ Person * validcard(int cardID, vector<Person*> & myCardholders, int cardID ){
 
 
 void openCard(vector<Person*> & myCardholders, int nextID) {
+  string first;
+  string last;
+  string full;
+  cout << "Please enter your first name: ";
+  cin >> first;
+  cout << "Pleast enter your last name: ";
+  cin >> last;
+  full = first + " " last;
+  
 
 }
 
