@@ -101,21 +101,13 @@ infile.close();
 
 }
 
-bool validbook(int bookid, vector<Book*> & myBooks){
-  for (int i = o; i < myBooks.size(); i++){
-    if ( bookid == (*myBooks).at(i).getId())
-      return true;
-    else
-      cout << "Book ID not valid" << endl;
-  }
-
 }
 
-Person * validcard(int cardID, vector<Person*> & myCardholders ){
-   for (int i = o; i < myCardholders.size(); i++){
+Person * validcard(int cardID, vector<Person*> & myCardholders, int cardID ){
+   for (int i = 0; i < myCardholders.size(); i++){
      if (cardID == (*myCardholders).at(i).getId()) {
        if ((*myCardholders).at(i).isActive() == true )
-        return personPtr;
+        return myCardholders.at(i);
        }
      }
      return nullptr; // Didn't find card id
@@ -126,8 +118,13 @@ void openCard(vector<Person*> & myCardholders, int nextID) {
 
 }
 
-Book * searchBook(vector<Book*> myBooks, int id) {
-    return nullptr;
+Book * searchBook(vector<Book*> myBooks, int bookid) {
+  for (int i = 0; i < myBooks.size(); i++){
+    if (bookid == (*myBooks).at(i).getId())
+      return myBooks.at(i).getId();
+  }
+
+    return nullptr; //Didn't find book
 }
 
 
