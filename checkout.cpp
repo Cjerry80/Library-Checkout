@@ -22,6 +22,7 @@ void openCard(vector<Person*> & myCardholders, int nextID);
 Book * searchBook(vector<Book*> myBooks, int id);
 
 
+
 void printMenu() {
     cout << "----------Library Book Rental System----------" << endl;
     cout << "1.  Book checkout" << endl;
@@ -129,7 +130,7 @@ void openCard(vector<Person*> & myCardholders, int nextID) {
   cout << "Pleast enter your last name: ";
   cin >> last;
   full = first + " " last;
-  
+
 
 }
 
